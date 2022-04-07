@@ -1,5 +1,6 @@
-import firebase from 'firebase/app';
-import 'firebase/firestore';
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD53q594AlVVT1RAU-vyzvTb_JpDq0H2ps",
@@ -7,14 +8,14 @@ const firebaseConfig = {
   projectId: "cashmoney-925eb",
   storageBucket: "cashmoney-925eb.appspot.com",
   messagingSenderId: "38230919554",
-  appId: "1:38230919554:web:db3c88f8330251158ca79b"
+  appId: "1:38230919554:web:db3c88f8330251158ca79b",
 };
 
-
 // init firebase
-firebase.initializeApp(firebaseConfig)
+firebase.initializeApp(firebaseConfig);
 
-// init service
+// init service to use in other components
 const projectFirestore = firebase.firestore();
+const projectAuth = firebase.auth();
 
-export { projectFirestore }
+export { projectFirestore, projectAuth };
